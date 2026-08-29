@@ -1059,6 +1059,23 @@
       font-weight:600;
     }
 
+
+    /* v11 mobile readability refinements */
+    .weekly-core h3 span{display:block}
+    .value .section-head h2{
+      max-width:700px;
+      margin:0 auto 14px;
+      text-wrap:balance;
+    }
+    .value .section-head p{
+      max-width:760px;
+      margin:0 auto;
+    }
+    .weekly .section-head h2,
+    .weekly-core h3{
+      text-wrap:balance;
+    }
+
     /* how */
     .how{background:#fff}
     .steps{
@@ -1259,7 +1276,8 @@
       .steps{grid-template-columns:1fr 1fr}
       .step{min-height:0;text-align:left;display:grid;grid-template-columns:42px 1fr;column-gap:10px;align-items:center;padding:15px}
       .step-num{margin:0}
-      .value-grid,.weekly-grid,.weekly-grid-four{grid-template-columns:1fr 1fr}
+      .value-grid{grid-template-columns:1fr 1fr}
+      .weekly-grid,.weekly-grid-four{grid-template-columns:1fr 1fr}
       .diagnosis-box{grid-template-columns:1fr}
       .teacher-card,.teacher-card-photo{grid-template-columns:1fr;text-align:center}
       .teacher-photo-wrap{width:min(280px,100%);min-height:360px;margin:0 auto}
@@ -1288,6 +1306,29 @@
     }
 
     @media(max-width:560px){
+      .value-grid{grid-template-columns:1fr}
+      .value-card{
+        min-height:0;
+        padding:24px 20px;
+      }
+      .value-card p{
+        max-width:240px;
+        margin:0 auto;
+      }
+      .weekly-core{
+        padding:24px 20px;
+      }
+      .weekly-core h3{
+        font-size:24px;
+        line-height:1.45;
+      }
+      .weekly-core h3 span + span{
+        margin-top:4px;
+      }
+      .hero .btn-row{
+        gap:10px;
+      }
+
       .review-grid-balanced{grid-template-columns:1fr}
       .review-grid-balanced .review-img-frame{min-height:0;max-height:none}
       .review-highlight{padding:17px 16px}
@@ -1315,6 +1356,7 @@
   </style>
 </head>
 <body>
+  <!-- v11: 모바일 가독성 수정 / 가격 위치 조정 / 문구 재정리 -->
   <!-- v9: fresh light-green + ivory + olive theme -->
   <!-- v8: softer mauve + warm ivory + taupe palette -->
   <!-- v7: 딥와인+아이보리+차콜 / 후기 7개 / 샘플 4장 / 대비 강화 -->
@@ -1349,13 +1391,7 @@
             <strong>우리 아이의 독서 수준·성향·관심사를 바탕으로,<br class="desktop-br">
             지금 가장 적절한 책과 독서 활동을 함께 설계합니다.</strong>
           </p>
-
-          <div class="price-line">
-            <span>월</span>
-            <strong>49,000원</strong>
-          </div>
-
-          <div class="hero-tags">
+<div class="hero-tags">
             <span>성향 맞춤</span>
             <span>개인별 도서 추천</span>
             <span>엄마 가이드</span>
@@ -1372,12 +1408,12 @@
           <div class="big-book">
             <div>
               <div class="bb-small">YEON READING MEMBERSHIP</div>
-              <div class="bb-title">책 한 권으로<br>우리 아이가<br>멀리 갑니다</div>
+              <div class="bb-title">아이에게 맞는 책이<br>독서의 시작을<br>바꿉니다</div>
               <div class="bb-rule"></div>
               <div class="bb-desc">
-                아이와 엄마가 함께 성장하는 시간<br>
-                책을 고르는 일부터<br>
-                읽은 뒤 생각을 나누는 과정까지
+                아이에게 맞는 책을 고르고<br>
+                읽은 뒤 생각을 나누는 습관까지<br>
+                한 주의 독서를 함께 설계합니다
               </div>
             </div>
             <div class="bb-foot">예온쌤 엄마표 독서 멤버십</div>
@@ -1465,8 +1501,8 @@
       <div class="wrap">
         <div class="section-head">
           <span class="eyebrow">MEMBERSHIP VALUE</span>
-          <h2>책 한 권으로 우리 아이가 멀리 갑니다</h2>
-          <p>아이와 엄마가 함께 성장하는 시간을 만드는 세 가지 핵심입니다.</p>
+          <h2>아이에게 맞는 책과 대화가<br>독서를 바꿉니다</h2>
+          <p>책만 추천하는 것이 아니라, 책을 고르는 기준부터 읽고 난 뒤 대화까지 함께 설계합니다.</p>
         </div>
 
         <div class="value-grid">
@@ -1533,7 +1569,7 @@
 
         <div class="weekly-core">
           <small>한 주에 받는 독서 구성</small>
-          <h3>메인 도서 1권 + 추가 추천 6권 + 엄마 가이드 + 아이 활동지</h3>
+          <h3><span>메인 도서 1권 + 추가 추천 6권</span><span>엄마 가이드 + 아이 활동지</span></h3>
           <p>
             한 권만 추천하고 끝나는 것이 아니라,
             이번 주 핵심 독서를 중심으로 다음 독서까지 이어갈 수 있게 구성합니다.
@@ -1941,7 +1977,7 @@
   </footer>
 
   <div class="mobile-sticky">
-    <button onclick="goMembership()">월 49,000원 · 멤버십 시작하기</button>
+    <button onclick="goMembership()">멤버십 시작하기</button>
   </div>
 
   <script>
